@@ -20,12 +20,13 @@ public class Client {
         int index = random.nextInt(task.size());
         return task.get(index);
     }
+
     public static void main(String... args) {
         try (Socket clientSocket = new Socket("localhost", 8989);
              PrintWriter writer = new PrintWriter(clientSocket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
             writer.println("{ \"type\": \"ADD\", \"task\": \" task : " + pickTask() + "\" }");
-            System.out.println("type: " + Command.Type.ADD  + in.readLine());
+            System.out.println("type: " + Command.Type.ADD + in.readLine());
         } catch (UnknownHostException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {

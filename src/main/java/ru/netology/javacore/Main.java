@@ -1,5 +1,4 @@
 package ru.netology.javacore;
-
 import java.io.IOException;
 
 public class Main {

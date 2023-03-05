@@ -1,11 +1,10 @@
 package ru.netology.javacore;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Todos {
-    private final List<String> tasks = new LinkedList<>();
     private static final int MAX_AMOUNT_OF_TASKS = 7;
+    private final List<String> tasks = new LinkedList<>();
 
     public void addTask(String task) {
         if (tasks.size() < MAX_AMOUNT_OF_TASKS) {
@@ -22,15 +21,12 @@ public class Todos {
     public String getAllTasks() {
         Collections.sort(tasks);
         StringBuilder stringBuilder = new StringBuilder();
-        for (String i : tasks) {
-            if (stringBuilder.toString().equals("")) {
-                stringBuilder.append(tasks);
-            } else {
-                stringBuilder.append(" ").append(i);
-            }
+        for (int i = 0; i < tasks.size(); i++) {
+            stringBuilder.append(tasks.get(i));
+            stringBuilder.append(" ");
         }
         return stringBuilder.toString();
     }
-    }
+}
 
 

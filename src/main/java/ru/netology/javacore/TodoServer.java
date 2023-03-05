@@ -1,15 +1,14 @@
 package ru.netology.javacore;
 
 import com.google.gson.Gson;
-
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
+
 
 public class TodoServer {
     private int port;
-    private  Todos todos;
+    private Todos todos;
     private Gson gson = new Gson();
 
     public TodoServer(int port, Todos todos) {
@@ -51,6 +50,7 @@ class Command {
 
     Type type;
     String task;
+
     public Command(Type type, String task) {
         this.type = type;
         this.task = task;
